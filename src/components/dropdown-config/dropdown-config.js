@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Select from 'react-select';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export function DropdownIndicator(props) {
   const { selectProps: { menuIsOpen, isDisabled } } = props;
@@ -8,7 +9,7 @@ export function DropdownIndicator(props) {
   return (
     <div className={`dropdown-custom-indicator ${isDisabled ? 'dropdown-custom-indicator--is-disabled' : ''}`}>
       <div className={`dropdown-custom-indicator__icon-container ${menuIsOpen ? 'dropdown-menu-is-open' : ''}`}>
-        <i className="fas fa-chevron-down" />
+        <FontAwesomeIcon icon="chevron-down" />
       </div>
     </div>
   );
@@ -21,7 +22,7 @@ export default class DropdownConfig extends React.PureComponent {
   getPlaceholder() {
     const { placeholder } = this.props;
 
-    return (<div><i className="fas fa-search select-icon" /> {placeholder}</div>);
+    return (<div><FontAwesomeIcon icon="search" className="select-icon" /> {placeholder}</div>);
   }
 
   render() {

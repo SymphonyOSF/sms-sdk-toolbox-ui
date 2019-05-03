@@ -3,6 +3,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 /**
  * Presentational Component for **Toast**. Appears on a fixed position in screen, starts a timer,
@@ -77,7 +78,7 @@ class Toast extends React.PureComponent {
           <div className={`toast toast--${classModifier} ${isEmbedded ? 'toast-embed' : ''}`}>
             <div className={`toast__logo toast__logo--${classModifier}`}>
               <div className={`toast__icon-container toast__icon-container--${textModifier}`}>
-                <i className={`toast__icon toast__icon--${classModifier} fas fa-${iconModifier}`} />
+                <FontAwesomeIcon className={`toast__icon toast__icon--${classModifier}`} icon={iconModifier} />
               </div>
             </div>
             <div className={`toast__text toast__text--${textModifier}`}>
@@ -93,7 +94,7 @@ class Toast extends React.PureComponent {
               : (
                 <div className="toast__button-container">
                   <button type="button" className="toast__button-close" onClick={toastHide}>
-                    <i className="fas fa-times" />
+                    <FontAwesomeIcon icon="times" />
                   </button>
                 </div>
               )}

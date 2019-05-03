@@ -1,4 +1,9 @@
 import './styles/main.scss';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import {
+  faChevronDown, faTimes, faSearch,
+  faCheck, faInfo, faExclamationTriangle,
+} from '@fortawesome/free-solid-svg-icons';
 import Button from './components/button/button';
 import Checkbox from './components/checkbox/checkbox';
 import CopyTextInput from './components/copy-text-input/copy-text-input';
@@ -18,6 +23,13 @@ import TableItem from './components/table/table-item';
 import TableRow from './components/table/table-row';
 import Toast from './components/toast/toast';
 import MessageBox from './components/message-box/message-box';
+
+library.add(faChevronDown);
+library.add(faTimes);
+library.add(faSearch);
+library.add(faCheck);
+library.add(faInfo);
+library.add(faExclamationTriangle);
 
 export {
   Button,

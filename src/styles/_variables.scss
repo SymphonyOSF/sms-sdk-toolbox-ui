@@ -40,7 +40,7 @@ $color-issue-closed: #c63838;
 $color-issue-reopened: #489164;
 
 $color-dropdown-placeholder: $color-greyish-black;
-$color-dropdown-border: #9fa4ad;
+$color-dropdown-border: #dce1ea;
 $color-dropdown-border-focused: #323232;
 $color-dropdown-option-background: #ebebeb;
 $color-dropdown-option-selected-background: #e3e5e8;
@@ -53,6 +53,7 @@ $color-main-text: #4d4d4d;
 $color-link: #1589ee;
 
 $color-general-gray: #979797;
+$color-darker-gray: #949494;
 
 // BUTTON
 $color-button-text-color: #4a4a4a;
@@ -78,8 +79,8 @@ $heading-font-family-bold: Lato-Bold;
 $heading-5: #b2b2b2;
 
 // INPUT
-$input-border-color: #dce1ea;
-$input-placeholder-color: #a6b1c2;
+$input-border-color: #c8cbd0;
+$input-placeholder-color: #6a707c;
 $input-disabled-color: #f9fafc;
 
 // DROPDOWN
@@ -95,14 +96,14 @@ $color-dropdown-disabled: #f9fafc;
 
 // RADIO
 $color-radio-selected: $color-primary;
-$color-radio-border: #dce1ea;
+$color-radio-border: $color-darker-gray;
 $color-radio-background: $color-white;
 $color-radio-disabled: #f2f2f2;
 $color-radio-filled-disabled: #a0a0a0;
 
 // CHECKBOX
 $color-checkbox-filled: $color-primary;
-$color-checkbox-outline: $color-general-gray;
+$color-checkbox-outline: $color-darker-gray;
 $color-check: $color-white;
 $color-checkbox-font-disabled: #a0a0a0;
 $color-checkbox-disabled: #f2f2f2;
