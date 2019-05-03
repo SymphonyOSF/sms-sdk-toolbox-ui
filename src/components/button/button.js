@@ -1,38 +1,36 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-class Button extends React.PureComponent {
-  executePress = (e) => {
-    const { onClick } = this.props;
+export default function Button(props) {
+  const executePress = (e) => {
+    const { onClick } = props;
     e.stopPropagation();
     onClick();
-  }
+  };
 
-  render() {
-    const {
-      type, color, disable, isLoading, loadingComponent, children, onClick, typeButton,
-      className, fill,
-    } = this.props;
+  const {
+    type, color, disable, isLoading, loadingComponent, children, onClick, typeButton,
+    className, fill,
+  } = props;
 
-    return (
-      <button
-        type={!typeButton ? 'button' : typeButton}
-        onClick={onClick ? this.executePress : null}
-        className={
+  return (
+    <button
+      type={!typeButton ? 'button' : typeButton}
+      onClick={onClick ? executePress : null}
+      className={
           `${disable
             ? `${className || ''} btn btn-${type}--disable`
             : `${className || ''} btn btn-${type}--${color}`
           } ${fill ? 'btn--fill' : ''}`
           }
-        disabled={disable || isLoading}
-      >
-        <div className="button-content">
-          <span className={isLoading ? 'button-text--hide' : ''}>{children}</span>
-          {isLoading ? <div className="button-loading">{loadingComponent}</div> : null}
-        </div>
-      </button>
-    );
-  }
+      disabled={disable || isLoading}
+    >
+      <div className="button-content">
+        <span className={isLoading ? 'button-text--hide' : ''}>{children}</span>
+        {isLoading ? <div className="button-loading">{loadingComponent}</div> : null}
+      </div>
+    </button>
+  );
 }
 
 Button.propTypes = {
@@ -45,6 +43,7 @@ Button.propTypes = {
   loadingComponent: PropTypes.node,
   onClick: PropTypes.func,
   typeButton: PropTypes.string,
+  fill: PropTypes.bool,
 };
 
 Button.defaultProps = {
@@ -55,6 +54,5 @@ Button.defaultProps = {
   onClick: null,
   className: undefined,
   typeButton: null,
+  fill: false,
 };
-
-export default Button;

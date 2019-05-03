@@ -1,34 +1,32 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default class Checkbox extends React.PureComponent {
-  render() {
-    const {
-      children, onChange, isChecked, disabled,
-    } = this.props;
+export default function Checkbox(props) {
+  const {
+    children, onChange, isChecked, disabled,
+  } = props;
 
-    return (
-      <div key={children}>
-        <label
-          key={`label_${children}`}
-          htmlFor={`checkbox-${children}`}
-          className={`checkbox-label ${disabled ? 'checkbox-label--disabled' : ''}`}
-        >
-          <input
-            disabled={disabled}
-            key={`checkbox_${children}`}
-            id={`checkbox-${children}`}
-            className="checkbox__input"
-            onChange={onChange}
-            type="checkbox"
-            checked={isChecked}
-          />
-          {children}
-          <span className="checkbox__checkmark" />
-        </label>
-      </div>
-    );
-  }
+  return (
+    <div key={children}>
+      <label
+        key={`label_${children}`}
+        htmlFor={`checkbox-${children}`}
+        className={`checkbox-label ${disabled ? 'checkbox-label--disabled' : ''}`}
+      >
+        <input
+          disabled={disabled}
+          key={`checkbox_${children}`}
+          id={`checkbox-${children}`}
+          className="checkbox__input"
+          onChange={onChange}
+          type="checkbox"
+          checked={isChecked}
+        />
+        {children}
+        <span className="checkbox__checkmark" />
+      </label>
+    </div>
+  );
 }
 
 Checkbox.propTypes = {

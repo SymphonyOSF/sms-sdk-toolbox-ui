@@ -14,42 +14,41 @@ export function DropdownIndicator(props) {
     </div>
   );
 }
+
 DropdownIndicator.propTypes = {
   selectProps: PropTypes.object.isRequired,
 };
 
-export default class DropdownConfig extends React.PureComponent {
-  getPlaceholder() {
-    const { placeholder } = this.props;
-
+export default function DropdownConfig(props) {
+  const getPlaceholder = () => {
+    const { placeholder } = props;
     return (<div><FontAwesomeIcon icon="search" className="select-icon" /> {placeholder}</div>);
-  }
+  };
 
-  render() {
-    const {
-      entry, identifier, onChangeOptions, option, isDisabled,
-    } = this.props;
-    const chosenOption = entry.find(el => el[identifier] === option);
+  const {
+    entry, identifier, onChangeOptions, option, isDisabled,
+  } = props;
+  const chosenOption = entry.find(el => el[identifier] === option);
 
-    return (
-      <Select
-        value={chosenOption || null}
-        options={entry}
-        components={{ DropdownIndicator }}
-        getOptionValue={el => el[identifier]}
-        getOptionLabel={el => el.name}
-        isSearchable
-        isClearable
-        placeholder={this.getPlaceholder()}
-        onChange={onChangeOptions}
-        className="dropdown-container"
-        classNamePrefix="dropdown-config"
-        isDisabled={isDisabled}
-        blurInputOnSelect // important to allow the dropdown open after a modal is closed
-      />
-    );
-  }
+  return (
+    <Select
+      value={chosenOption || null}
+      options={entry}
+      components={{ DropdownIndicator }}
+      getOptionValue={el => el[identifier]}
+      getOptionLabel={el => el.name}
+      isSearchable
+      isClearable
+      placeholder={getPlaceholder()}
+      onChange={onChangeOptions}
+      className="dropdown-container"
+      classNamePrefix="dropdown-config"
+      isDisabled={isDisabled}
+      blurInputOnSelect // important to allow the dropdown open after a modal is closed
+    />
+  );
 }
+
 
 DropdownConfig.propTypes = {
   /** Placeholder string. */
