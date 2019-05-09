@@ -24,10 +24,9 @@ const getTextColor = () => colors.darkgrey;
 const getPadding = size => PADDING[size];
 const getFontSize = (title, size) => (title ? FONTTITLE[size] : FONTSIZE[size]);
 const getFontWeight = title => (title ? '900' : '400');
-const getBorderBottom = (title, size) => (title ? ((size=='large') ? '1px #E6E6E6 solid' : '0px' ) : '0px');
+const getBorderBottom = (title, size) => (title ? ((size == 'large') ? '1px #E6E6E6 solid' : '0px') : '0px');
 
 class Text extends React.PureComponent {
-
   render() {
     const {
       children, title, size, ...rest
@@ -44,12 +43,12 @@ class Text extends React.PureComponent {
 Text.propTypes = {
   title: PropTypes.bool,
   size: PropTypes.string,
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 };
 
 Text.defaultProps = {
   title: false,
-  size: 'large'
+  size: 'large',
 };
 
 export default Text;
