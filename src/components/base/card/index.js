@@ -8,7 +8,6 @@ import Text from '../Text';
 import { colors } from '../../../styles/colors';
 
 class Card extends React.PureComponent {
-
   render() {
     const {
       children, title, ...rest
@@ -29,11 +28,11 @@ class Card extends React.PureComponent {
 
 Card.propTypes = {
   title: PropTypes.string,
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 };
 
 Card.defaultProps = {
-  title: 'Title'
+  title: 'Title',
 };
 
 export default Card;
