@@ -1,25 +1,13 @@
-import React from 'react'
-import styled from 'styled-components'
-import Button from '../src/base/button/button'
+import React from 'react';
+// import Button from '../src/base/button/button';
+import InputField from '../src/components/base/InputField';
 
 const ExamplePage = () => (
   <div>
-    <Button>
-      Button
-    </Button>
-    <Button danger>
-      TomatoButton
-    </Button>
-    <Button small>
-      Small
-    </Button>
-    <Button medium>
-      Medium
-    </Button>
-    <Button large>
-      Large
-    </Button>
+    <InputField>
+      my test
+    </InputField>
   </div>
-)
+);
 
-export { ExamplePage }
+export { ExamplePage };
