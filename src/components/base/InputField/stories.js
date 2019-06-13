@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
+import { withTests } from '@storybook/addon-jest';
+import results from '../../../../jest-test-results.json';
 import Box from '../Box';
 import InputField from '.';
 import Text from '../Text';
@@ -84,6 +86,7 @@ const InputFieldCopyOptionStory = () => {
 };
 
 storiesOf('Base', module)
+  .addDecorator(withTests({ results }))
   .add('InputField', () => (
     <Box p={15}>
       <InputFieldStory />
@@ -96,4 +99,7 @@ storiesOf('Base', module)
       </Box>
       <InputFieldWithErrorStory />
     </Box>
-  ));
+  ),
+  {
+    jest: ['__tests__/spec.js'],
+  });

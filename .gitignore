@@ -4,3 +4,4 @@ node_modules
 +jest-test-results.json
 build/*
 examples/node_modules
+coverage/*
