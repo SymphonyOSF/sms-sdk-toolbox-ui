@@ -2,6 +2,8 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
+import { withTests } from '@storybook/addon-jest';
+import results from '../../../../jest-test-results.json';
 
 import Button from '.';
 import Box from '../Box';
@@ -10,6 +12,7 @@ import Text from '../Text';
 const asyncAction = async () => new Promise(success => setTimeout(success, 2000));
 
 storiesOf('Base', module)
+  .addDecorator(withTests({ results }))
   .add('Button', () => (
     <Box p={15}>
       <Box>
@@ -92,4 +95,7 @@ storiesOf('Base', module)
         </Box>
       </Box>
     </Box>
-  ));
+  ),
+  {
+    jest: ['__tests__/spec.js'],
+  });
