@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
 import { withTests } from '@storybook/addon-jest';
 import {
   withKnobs,
@@ -46,8 +47,10 @@ const InputFieldWithErrorStory = () => {
 const InputFieldStory = ({ placeholder, disabled }) => {
   const [input, setInput] = useState('');
   const inputState = 'initial';
+  const myAction = action('onChange');
 
   function handleInput(e) {
+    myAction(e);
     setInput(e.target.value);
   }
 
