@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { withTests } from '@storybook/addon-jest';
+import {
+  withKnobs,
+  text,
+  boolean,
+} from '@storybook/addon-knobs';
 import results from '../../../../jest-test-results.json';
 import Box from '../Box';
 import InputField from '.';
@@ -38,23 +43,24 @@ const InputFieldWithErrorStory = () => {
   );
 };
 
-const InputFieldStory = () => {
+const InputFieldStory = ({ placeholder, disabled }) => {
   const [input, setInput] = useState('');
   const inputState = 'initial';
 
   function handleInput(e) {
     setInput(e.target.value);
   }
+
   return (
     <Box vertical space={20}>
-      <Text title size="large">Input Field</Text>
+      <Text title size="large">Input Field (interactive with knobs)</Text>
       <div style={styles}>
-
         <InputField
           value={input}
           inputState={inputState}
           onChange={handleInput}
-          placeholder="Input here..."
+          placeholder={placeholder}
+          disabled={disabled}
         />
       </div>
     </Box>
@@ -87,19 +93,28 @@ const InputFieldCopyOptionStory = () => {
 
 storiesOf('Base', module)
   .addDecorator(withTests({ results }))
-  .add('InputField', () => (
-    <Box p={15}>
-      <InputFieldStory />
-      <InputFieldCopyOptionStory />
-      <Box vertical space={20}>
-        <Text title size="large">Disabled input field</Text>
-        <div style={styles}>
-          <InputField disabled />
-        </div>
+  .addDecorator(withKnobs)
+  .add('InputField', () => {
+    const placeholder = text('Place Holder', 'Input here...');
+    const disabled = boolean('Disabled', false);
+
+    return (
+      <Box p={15}>
+        <InputFieldStory
+          placeholder={placeholder}
+          disabled={disabled}
+        />
+        <InputFieldCopyOptionStory />
+        <Box vertical space={20}>
+          <Text title size="large">Disabled input field</Text>
+          <div style={styles}>
+            <InputField disabled />
+          </div>
+        </Box>
+        <InputFieldWithErrorStory />
       </Box>
-      <InputFieldWithErrorStory />
-    </Box>
-  ),
+    );
+  },
   {
     jest: ['__tests__/spec.js'],
   });
