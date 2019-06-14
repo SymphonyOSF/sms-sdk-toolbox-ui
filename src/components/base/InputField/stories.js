@@ -47,10 +47,11 @@ const InputFieldWithErrorStory = () => {
 const InputFieldStory = ({ placeholder, disabled }) => {
   const [input, setInput] = useState('');
   const inputState = 'initial';
-  const myAction = action('onChange');
 
-  function handleInput(e) {
-    myAction(e);
+  const displayAction = action('onChange'); // storybook addon "action"
+
+  function handleChange(e) {
+    displayAction(e);
     setInput(e.target.value);
   }
 
@@ -61,7 +62,7 @@ const InputFieldStory = ({ placeholder, disabled }) => {
         <InputField
           value={input}
           inputState={inputState}
-          onChange={handleInput}
+          onChange={handleChange}
           placeholder={placeholder}
           disabled={disabled}
         />
