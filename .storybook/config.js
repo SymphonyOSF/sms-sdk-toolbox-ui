@@ -1,5 +1,7 @@
 import { addParameters, configure, addDecorator } from '@storybook/react';
-import { withA11y } from '@storybook/addon-a11y';
+import { jsxDecorator } from 'storybook-addon-jsx';
+
+addDecorator(jsxDecorator);
 
 function requireAll(requireContext) {
   return requireContext.keys().map(requireContext);
@@ -8,7 +10,6 @@ function requireAll(requireContext) {
 function loadStories() {
   requireAll(require.context("../src/components", true, /stories\.js?$/));
 }
-addDecorator(withA11y)
 
 addParameters({ viewport: { defaultViewport: 'responsive' } });
 
