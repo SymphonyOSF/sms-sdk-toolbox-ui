@@ -65,6 +65,8 @@ const Button = ({
       .then(() => setIsLoading(false));
   };
 
+  console.log('Button Loading', loading, isLoading);
+
   return (
     <BaseButton
       size={size}
