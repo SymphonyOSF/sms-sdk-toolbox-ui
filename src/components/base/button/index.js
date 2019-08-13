@@ -65,7 +65,7 @@ const Button = ({
       .then(() => setIsLoading(false));
   };
 
-  console.log('Button Loading', loading, isLoading);
+  console.log(`Button ${children} Loading`, loading, isLoading);
 
   return (
     <BaseButton
