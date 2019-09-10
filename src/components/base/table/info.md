@@ -3,6 +3,9 @@ A table component that displays all data separated by rows and columns.
 It wraps this component:
 https://www.npmjs.com/package/react-data-table-component
 
+Additional info:
+https://jbetancur.github.io/react-data-table-component/
+
 For further customization, please follow the above documentation,
 everything passed to PhoneInputField will be propagated and **override** any prop.
 
