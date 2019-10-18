@@ -189,8 +189,4 @@ storiesOf('Base', module)
       <TextAreaStory />
       <TextAreaStory disabled />
     </StoryWrapper>
-  ), {
-    notes: {
-      markdown: Info,
-    },
-  });
+  ));

@@ -22,8 +22,4 @@ storiesOf('Base', module)
         </Card>
       </Box>
     </StoryWrapper>
-  ), {
-    notes: {
-      markdown: Info,
-    },
-  });
+  ));

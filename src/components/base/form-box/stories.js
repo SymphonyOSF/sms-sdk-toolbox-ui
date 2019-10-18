@@ -182,9 +182,4 @@ storiesOf('Base', module)
         </FormBox>
       </StoryWrapper>
     ),
-    {
-      notes: {
-        markdown: Info,
-      },
-    },
   );

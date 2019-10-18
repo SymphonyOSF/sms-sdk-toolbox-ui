@@ -150,9 +150,4 @@ storiesOf('Base', module)
         </Box>
       </Box>
     </StoryWrapper>
-  ),
-  {
-    notes: {
-      markdown: Info,
-    },
-  });
+  ));

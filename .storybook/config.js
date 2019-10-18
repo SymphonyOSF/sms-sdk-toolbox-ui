@@ -2,6 +2,7 @@ import { addParameters, configure, addDecorator } from '@storybook/react';
 import {withThemesProvider} from 'storybook-addon-styled-component-theme';
 import {THEMES} from "../src/styles/colors";
 import {Logger} from "../src/utils";
+import { DocsPage, DocsContainer } from '@storybook/addon-docs/blocks';
 import './config.css';
 
 Logger.setEnv({
@@ -16,7 +17,7 @@ function requireAll(requireContext) {
 }
 
 function loadStories() {
-  requireAll(require.context("../src/components", true, /stories\.js?$/));
+  requireAll(require.context('../src/components', true, /.stories\.(js|mdx)$/));
 }
 
 const decoratedThemes = THEMES.map(theme => Object.assign({
@@ -25,6 +26,13 @@ const decoratedThemes = THEMES.map(theme => Object.assign({
 
 addDecorator(withThemesProvider(decoratedThemes));
 
-addParameters({ viewport: { defaultViewport: 'responsive' } });
 
-configure(loadStories, module);
+addParameters({
+  docs: {
+    container: DocsContainer,
+    page: DocsPage,
+  },
+});
+
+
+configure(require.context('../src/components', true, /\.stories\.(js|mdx)$/), module);

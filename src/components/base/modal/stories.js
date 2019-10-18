@@ -80,10 +80,5 @@ storiesOf('Base', module).add(
         </Box>
       </StoryWrapper>
     </ModalProvider>
-  )),
-  {
-    notes: {
-      markdown: Info,
-    },
-  },
+  ))
 );

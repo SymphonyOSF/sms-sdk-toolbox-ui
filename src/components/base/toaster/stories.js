@@ -42,8 +42,4 @@ storiesOf('Base', module)
         </Box>
       </ToasterProvider>
     </StoryWrapper>
-  ), {
-    notes: {
-      markdown: Info,
-    },
-  });
+  ));

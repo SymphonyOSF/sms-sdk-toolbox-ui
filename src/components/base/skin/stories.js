@@ -14,8 +14,4 @@ storiesOf('Base', module)
         <Text isTitle size="large">Look at the Notes tab in this page!</Text>
       </Box>
     </StoryWrapper>
-  ), {
-    notes: {
-      markdown: Info,
-    },
-  });
+  ));

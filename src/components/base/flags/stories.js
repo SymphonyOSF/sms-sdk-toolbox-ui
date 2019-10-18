@@ -44,8 +44,4 @@ storiesOf('Base', module)
         ))}
       </Box>
     </StoryWrapper>
-  ), {
-    notes: {
-      markdown: Info,
-    },
-  });
+  ));
