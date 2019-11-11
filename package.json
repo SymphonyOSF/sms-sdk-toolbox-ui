@@ -69,7 +69,7 @@
     "react-table": "^6.10.3",
     "sass-loader": "^7.1.0",
     "storybook-addon-jsx": "^7.1.2",
-    "storybook-addon-styled-component-theme": "^1.2.3",
+    "storybook-addon-styled-component-theme": "^1.2.5",
     "style-loader": "^0.23.1",
     "styled-components": "^4.3.2",
     "styled-icons": "^8.4.2",
