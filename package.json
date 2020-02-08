@@ -16,17 +16,19 @@
   "files": [
     "dist"
   ],
+  "publishConfig": {
+    "registry": "https://repo.symphony.com/artifactory/api/npm/npm-local-packages"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SymphonyPlatformSolutions/sms-sdk-toolbox-ui.git"
+    "url": "git+https://github.com/SymphonyOSF/sms-sdk-toolbox-ui.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/SymphonyPlatformSolutions/sms-sdk-toolbox-ui/issues"
+    "url": "https://github.com/SymphonyOSF/sms-sdk-toolbox-ui/issues"
   },
-  "private": true,
-  "homepage": "https://github.com/SymphonyPlatformSolutions/sms-sdk-toolbox-ui#readme",
+  "homepage": "https://github.com/SymphonyOSF/sms-sdk-toolbox-ui#readme",
   "devDependencies": {
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.4",
